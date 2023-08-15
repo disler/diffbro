@@ -1,6 +1,7 @@
 .aider.chat.history.md
 .aider.ident.cache.v1
 .aider.tags.cache.v1
+.aider.input.history
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
