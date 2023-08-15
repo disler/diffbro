@@ -31,3 +31,6 @@
 
 # 2023-08-15 15:13:51.831204
 +add three boolean cli arguments to main.py. 'chill', 'mid', and 'chad'.
+
+# 2023-08-15 15:14:58.300199
++add short codes for each cli flag
