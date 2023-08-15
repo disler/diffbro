@@ -10,6 +10,7 @@ packages = [{include = "py_diffbro"}]
 python = "^3.10"
 openai = "^0.27.8"
 python-dotenv = "^1.0.0"
+pydantic = "^2.1.1"
 
 
 [build-system]
