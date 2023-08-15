@@ -3,6 +3,8 @@
 .aider.tags.cache.v1
 .aider.input.history
 
+poetry.lock
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
