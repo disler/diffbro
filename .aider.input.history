@@ -28,3 +28,6 @@
 
 # 2023-08-15 15:12:33.736416
 +/tokens
+
+# 2023-08-15 15:13:51.831204
++add three boolean cli arguments to main.py. 'chill', 'mid', and 'chad'.
