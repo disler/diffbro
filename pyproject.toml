@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "py-diffbro"
+version = "0.1.0"
+description = ""
+authors = ["qwukker <minor7addfloortom@gmail.com>"]
+readme = "README.md"
+packages = [{include = "py_diffbro"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+openai = "^0.27.8"
+python-dotenv = "^1.0.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
