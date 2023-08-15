@@ -5,9 +5,9 @@ from modules.git import get_git_diff
 # here's a comment to test the git diff
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--chill', action='store_true')
-    parser.add_argument('--mid', action='store_true')
-    parser.add_argument('--chad', action='store_true')
+    parser.add_argument('-c', '--chill', action='store_true')
+    parser.add_argument('-m', '--mid', action='store_true')
+    parser.add_argument('-d', '--chad', action='store_true')
     args = parser.parse_args()
 
     git_diff = get_git_diff()
