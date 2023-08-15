@@ -5,6 +5,6 @@ def run_shell_command(command):
     output, error = process.communicate()
 
     if error:
-        print(f"Error: {error}")
+        return f"Error: {error}"
     else:
-        print(output)
+        return output
