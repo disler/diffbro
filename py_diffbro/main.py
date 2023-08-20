@@ -12,19 +12,23 @@ def main():
     parser.add_argument("-m", "--mid", action="store_true")
     parser.add_argument("-d", "--chad", action="store_true")
     parser.add_argument("-o", "--model", type=str, default="gpt-4")
-    parser.add_argument("--only", nargs='*', default=[])
-    parser.add_argument("--ignore", nargs='*', default=[])
+    parser.add_argument(
+        "--only", nargs="*", default=[".ts", ".tsx", ".js", ".jsx", ".py"]
+    )
+    parser.add_argument("--ignore", nargs="*", default=[""])
     args = parser.parse_args()
 
     model = args.model
     bro_mode: BroMode = BroMode.CHILL
+    only = args.only
+    ignore = args.ignore
 
     if args.mid:
         bro_mode = BroMode.MID
     elif args.chad:
         bro_mode = BroMode.CHAD
 
-    git_diff = get_git_diff()
+    git_diff = get_git_diff(only, ignore)
 
     if not git_diff:
         print(f"No git diff for diffbro")
