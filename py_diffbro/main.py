@@ -1,8 +1,8 @@
 import argparse
-from modules.llm import prompt
-from modules.git import get_git_diff
-from modules.app_types import BroMode
-from modules.bro import get_diffbro_prompt
+from py_diffbro.modules.llm import prompt
+from py_diffbro.modules.git import get_git_diff
+from py_diffbro.modules.app_types import BroMode
+from py_diffbro.modules.bro import get_diffbro_prompt
 
 
 # here's a comment to test the git diff
