@@ -14,6 +14,7 @@ def main():
     parser.add_argument("-o", "--model", type=str, default="gpt-4")
     args = parser.parse_args()
 
+    model = args.model
     bro_mode: BroMode = BroMode.CHILL
 
     if args.mid:
@@ -29,7 +30,7 @@ def main():
 
     prompt_text = get_diffbro_prompt(bro_mode, git_diff)
 
-    response = prompt(prompt_text)
+    response = prompt(prompt_text, model)
 
     print("DIFFBRO\n\n", response)
 
