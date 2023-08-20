@@ -12,6 +12,8 @@ def main():
     parser.add_argument("-m", "--mid", action="store_true")
     parser.add_argument("-d", "--chad", action="store_true")
     parser.add_argument("-o", "--model", type=str, default="gpt-4")
+    parser.add_argument("--only", nargs='*', default=[])
+    parser.add_argument("--ignore", nargs='*', default=[])
     args = parser.parse_args()
 
     model = args.model
