@@ -11,6 +11,7 @@ def main():
     parser.add_argument("-c", "--chill", action="store_true")
     parser.add_argument("-m", "--mid", action="store_true")
     parser.add_argument("-d", "--chad", action="store_true")
+    parser.add_argument("-o", "--model", type=str, default="gpt-4")
     args = parser.parse_args()
 
     bro_mode: BroMode = BroMode.CHILL
