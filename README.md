@@ -29,4 +29,4 @@
 
 ### Icebox
 
-[] Add summarybro flag that will create a short summary of the diff for the git commit message
+[] Add summarybro flag that will create a git commit message using the diffbro summary
