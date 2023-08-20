@@ -15,7 +15,7 @@
 
 [✅] Add GPT model flag
 
-[] Add diff exclusion of large files like poetry.lock from the diff
+[✅] Add diff exclusion of large files like poetry.lock from the diff
   Solution: `git diff -- '*.py' '*.js'`
   API: 
     Include specific file types
@@ -23,9 +23,9 @@
     Exclude specific file types
       diffbro --ignore '*.py' '*.js'
 
-  [] Add cli --only flag to diff only specific file types
+  [✅] Add cli --only flag to diff only specific file types
 
-  [] Add cli --ignore flag to ignore specific file types
+  [✅] Add cli --ignore flag to ignore specific file types
 
 [] Deploy to TestPyPi
 

@@ -47,8 +47,6 @@ def make_client(gpt_api_key: str):
 def prompt(prompt: str, model: str = "gpt-4") -> str:
     openai_client = openai
 
-    print(f"Firing off prompt")
-
     response = openai_client.ChatCompletion.create(
         model=model,
         messages=[

@@ -11,7 +11,7 @@ def main():
     parser.add_argument("-c", "--chill", action="store_true")
     parser.add_argument("-m", "--mid", action="store_true")
     parser.add_argument("-d", "--chad", action="store_true")
-    parser.add_argument("-o", "--model", type=str, default="gpt-4")
+    parser.add_argument("-o", "--model", type=str, default="gpt-3.5-turbo")
     parser.add_argument(
         "--only", nargs="*", default=[".ts", ".tsx", ".js", ".jsx", ".py"]
     )
@@ -34,7 +34,13 @@ def main():
         print(f"No git diff for diffbro")
         return
 
+    print(
+        f"Building prompt for diffbro in bromode: '{bro_mode}' mode on GPT model '{model}'"
+    )
+
     prompt_text = get_diffbro_prompt(bro_mode, git_diff)
+
+    print(f"Running DIFFBRO")
 
     response = prompt(prompt_text, model)
 
