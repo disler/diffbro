@@ -11,6 +11,8 @@
 
 ### TODO
 
+[✅] POC
+
 [] Add GPT model flag
 
 [] Add diff exclusion of large files like poetry.lock from the diff

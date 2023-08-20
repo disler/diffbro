@@ -22,6 +22,8 @@ def main():
 
     git_diff = get_git_diff()
 
+    print("git_diff", git_diff)
+
     if not git_diff:
         print(f"No git diff for diffbro")
         return
