@@ -13,7 +13,7 @@
 
 [✅] POC
 
-[] Add GPT model flag
+[✅] Add GPT model flag
 
 [] Add diff exclusion of large files like poetry.lock from the diff
   Solution: `git diff -- '*.py' '*.js'`
