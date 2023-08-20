@@ -1,4 +1,5 @@
 import argparse
+from py_diffbro.modules.constants import PROGRAMMING_FILE_EXTENSIONS
 from py_diffbro.modules.llm import prompt
 from py_diffbro.modules.git import get_git_diff
 from py_diffbro.modules.app_types import BroMode
@@ -13,7 +14,9 @@ def main():
     parser.add_argument("-d", "--chad", action="store_true")
     parser.add_argument("-o", "--model", type=str, default="gpt-3.5-turbo")
     parser.add_argument(
-        "--only", nargs="*", default=[".ts", ".tsx", ".js", ".jsx", ".py"]
+        "--only",
+        nargs="*",
+        default=PROGRAMMING_FILE_EXTENSIONS,
     )
     parser.add_argument("--ignore", nargs="*", default=[""])
     args = parser.parse_args()

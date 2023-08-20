@@ -1,8 +1,8 @@
 [tool.poetry]
 name = "diffbro"
-version = "0.1.0"
-description = ""
-authors = ["qwukker <minor7addfloortom@gmail.com>"]
+version = "0.1.1"
+description = "Your personal AI assistant bro for better code reviews."
+authors = ["IndyDevDan <minor7addfloortom@gmail.com>"]
 readme = "README.md"
 packages = [{include = "py_diffbro"}]
 
