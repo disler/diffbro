@@ -22,15 +22,11 @@ def main():
 
     git_diff = get_git_diff()
 
-    print("git_diff", git_diff)
-
     if not git_diff:
         print(f"No git diff for diffbro")
         return
 
     prompt_text = get_diffbro_prompt(bro_mode, git_diff)
-
-    print("prompt_text", prompt_text)
 
     response = prompt(prompt_text)
 
