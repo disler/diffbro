@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "diffbro"
-version = "0.1.1"
+version = "0.1.2"
 description = "Your personal AI assistant bro for better code reviews."
 authors = ["IndyDevDan <minor7addfloortom@gmail.com>"]
 readme = "README.md"

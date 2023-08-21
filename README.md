@@ -2,6 +2,8 @@
 
 *Your AI Peer Review Bro*
 
+![Diffbro Header](https://firebasestorage.googleapis.com/v0/b/solopreneur-d8361.appspot.com/o/Diffbro%2Fdiffbro.jpg?alt=media&token=fefc8d90-10e2-4091-9b03-957af25aee3b)
+
 ## Features
 
 - Different bro modes for chill, to chad engineer level peer reviews
