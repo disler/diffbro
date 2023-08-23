@@ -38,6 +38,8 @@
 
 ## Setup
 
+- Install or switch to [Python 3.10+](https://www.python.org/downloads/)
+
 - Install '*stable*' from [PyPI](https://pypi.org/)
   - `pip install --upgrade diffbro`
 
