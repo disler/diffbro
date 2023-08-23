@@ -25,4 +25,7 @@ PROGRAMMING_FILE_EXTENSIONS = [
     ".solid",
     ".toml",
     ".md",
+    ".go",
+    ".rs",
+    ".swift",
 ]
