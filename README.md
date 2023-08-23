@@ -39,12 +39,11 @@
 ## Setup
 
 - Install or switch to [Python 3.10+](https://www.python.org/downloads/)
+  - Check your python version
+    - `python --version`
 
-- Install '*stable*' from [PyPI](https://pypi.org/)
+- Install '*stable*' version from [PyPI](https://pypi.org/)
   - `pip install --upgrade diffbro`
-
-- Install BLEEDING EDGE version from [TestPyPi](https://test.pypi.org/)
-  - `pip install --upgrade --index-url https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple diffbro`
 
 - Export your openai api key
   - `export OPENAI_API_KEY=<your-openai-api-key>`
@@ -57,6 +56,11 @@
 - Implement the feedback from diffbro
 
 - Commit your code with confidence
+
+#### Install bleeding edge version
+
+- Install BLEEDING EDGE version from [TestPyPi](https://test.pypi.org/)
+  - `pip install --upgrade --index-url https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple diffbro`
 
 ## ROADMAP
 
@@ -80,14 +84,14 @@
 
 [✅] Test install version 0.1.0 from TestPyPi
 
-[] Deploy version 0.1.2 to pypy
+[✅] Deploy version 0.1.2 to pypy
 
 [] Add help docs
 
 [] Add confirm prompts to improve DX 
   - chad should always ask to use gpt-4
 
-[] Add openai_api_key check
+[] Improve openai_api_key check
 
 [] Add summarybro flag that will create a git commit message using the diffbro summary
 
