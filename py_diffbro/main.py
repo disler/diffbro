@@ -9,7 +9,6 @@ from py_diffbro.modules.app_types import BroMode
 from py_diffbro.modules.bro import get_diffbro_prompt
 
 
-# here's a comment to test the git diff
 def main():
     parser = argparse.ArgumentParser(
         description="Diffbro: Your AI Peer Review Bro",
@@ -38,7 +37,7 @@ def main():
         "-o",
         "--model",
         type=str,
-        default="gpt-3.5-turbo",
+        default="gpt-4",
         help="GPT model use 'gpt-3.5-turbo' or 'gpt-4'",
     )
     parser.add_argument(

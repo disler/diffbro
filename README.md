@@ -22,8 +22,8 @@
   - *Defaults to [".py", ".c", ".cpp", ".java", ".cs", ".php", ".vb", ".html", ".css", ".js", ".asp", ".aspx", ".cfm", ".cgi", ".pl", ".cer", ".htm", ".xhtml", ".shtml", ".jsp", ".jsx", ".tsx", ".vue", ".solid", ".toml", ".md", ".go", ".rs", ".swift"]*
 
 - Choose your gpt model
-  - `diffbro --model gpt-3.5-turbo` (default)
-  - `diffbro --model gpt-4` (recommended for production code)
+  - `diffbro --model gpt-3.5-turbo`
+  - `diffbro --model gpt-4` (default) (recommended for production code)
 
 - Example command combos
   - '*I want a chill review on my .py and .js files*'
