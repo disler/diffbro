@@ -2,6 +2,7 @@
 This module contains the functions that interact with the OpenAI API.
 """
 
+import sys
 from dotenv import load_dotenv
 import os
 from typing import Any, Dict
@@ -45,6 +46,18 @@ def make_client(gpt_api_key: str):
 
 
 def prompt(prompt: str, model: str = "gpt-4") -> str:
+    # validate the openai api key - if it's not valid, raise an error
+    if not openai.api_key:
+        sys.exit(
+            """
+
+ERORR: OpenAI API key not found. Please export your key to OPENAI_API_KEY
+
+Example bash command:
+    export OPENAI_API_KEY=<your openai apikey>
+            """
+        )
+
     openai_client = openai
 
     response = openai_client.ChatCompletion.create(

@@ -30,15 +30,15 @@
     - `diffbro --chill --only .py .js`
   - '*I'm about to ship production, mission critical UI code, I need a hardcore review on my FE code*'
     - `diffbro --chad --model gpt-4 --only .js .jsx .tsx .vue`
-  - '*I'm about to a fullstack app and need a comprehensive mid level review on all my code excluding .tsx files.*'
+  - '*I'm about to a fullstack app and need a comprehensive mid level review on all my code excluding .tsx files*'
     - `diffbro --mid --model gpt-4 --ignore .tsx`
   - '*I want legit reviews all the time*'
-    - Create a bash alias
+    - Throw this line into your .bashrc or .bash_profile
       - `alias dbro='diffbro --chad --model gpt-4'`
 
 ## Setup
 
-- Install or switch to [Python 3.10+](https://www.python.org/downloads/)
+- Install or switch to [Python 3.7.1+](https://www.python.org/downloads/)
   - Check your python version
     - `python --version`
 
@@ -57,10 +57,22 @@
 
 - Commit your code with confidence
 
-#### Install bleeding edge version
+#### Install bleeding edge version test version
 
 - Install BLEEDING EDGE version from [TestPyPi](https://test.pypi.org/)
   - `pip install --upgrade --index-url https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple diffbro`
+
+
+#### Local Dev (excluded from dist)
+- run diffbro locally
+  - `poetry run diffbro`
+- test versions
+  - `poetry run python scripts/run_tox.py`
+- publish to test pypi
+  - `poetry run python scripts/publish_testpypi.py`
+- publish to pypi
+  - `poetry run python scripts/publish_pypi.py`
+
 
 ## ROADMAP
 
@@ -86,15 +98,27 @@
 
 [✅] Deploy version 0.1.2 to pypy
 
-[] Add help docs
+-- off vid
+
+[✅] Add help docs
+
+[✅] Support additional python versions
+
+[✅] Improve openai_api_key check
 
 [] Add confirm prompts to improve DX 
-  - chad should always ask to use gpt-4
+  - chad should always ask to use gpt-4 (simple yes/no prompt)
 
-[] Improve openai_api_key check
-
-[] Add summarybro flag that will create a git commit message using the diffbro summary
+[] Add token limit check to prevent overage charges
 
 [] Add 'AI Devlogs' section to readme w/links to ai devlogs
 
-[] Deploy v0 to Production (PyPi) (coming soon!)
+-- on vid
+
+[] Add ~/.diffbro config file support for defaults
+
+[] Add custom prompts with a --custom 'name' which will refer to a custom.* block in ~/.diffbro
+
+[] Add summarybro flag that will create a git commit message using the diffbro summary
+
+[] Deploy to Pypi

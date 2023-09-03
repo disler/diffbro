@@ -8,17 +8,65 @@ from py_diffbro.modules.bro import get_diffbro_prompt
 
 # here's a comment to test the git diff
 def main():
-    parser = argparse.ArgumentParser()
-    parser.add_argument("-c", "--chill", action="store_true")
-    parser.add_argument("-m", "--mid", action="store_true")
-    parser.add_argument("-d", "--chad", action="store_true")
-    parser.add_argument("-o", "--model", type=str, default="gpt-3.5-turbo")
+    parser = argparse.ArgumentParser(
+        description="Diffbro: Your AI Peer Review Bro",
+        epilog="""
+First export your api key, then run an example below.
+
+You can get an API key here: https://platform.openai.com/account/api-keys
+
+Export command
+    `export OPENAI_API_KEY=<your openai apikey>`
+
+Examples:
+  * I want a chill review on my .py and .js files:
+      diffbro --chill --only .py .js
+  
+  * I'm about to ship production, mission critical UI code, I need a hardcore review on my FE code:
+      diffbro --chad --model gpt-4 --only .js .jsx .tsx .vue
+  
+  * I'm about to a fullstack app and need a comprehensive mid level review on all my code excluding .tsx files:
+      diffbro --mid --model gpt-4 --ignore .tsx
+  
+  * I want legit reviews all the time:
+      Create a bash alias: alias dbro='diffbro --chad --model gpt-4'
+    """,
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+    )
+    parser.add_argument(
+        "-c",
+        "--chill",
+        action="store_true",
+        help="Get a chill, jr-level engineer, relaxed diffbro PR review",
+    )
+    parser.add_argument(
+        "-m",
+        "--mid",
+        action="store_true",
+        help="Get a mid-level engineer, diffbro PR review",
+    )
+    parser.add_argument(
+        "-d",
+        "--chad",
+        action="store_true",
+        help="Get a chad, sr-level engineer, intense diffbro PR review",
+    )
+    parser.add_argument(
+        "-o",
+        "--model",
+        type=str,
+        default="gpt-3.5-turbo",
+        help="GPT model use 'gpt-3.5-turbo' or 'gpt-4'",
+    )
     parser.add_argument(
         "--only",
         nargs="*",
         default=PROGRAMMING_FILE_EXTENSIONS,
+        help="Only include files with these extensions",
     )
-    parser.add_argument("--ignore", nargs="*", default=[""])
+    parser.add_argument(
+        "--ignore", nargs="*", default=[], help="Ignore files with these extensions"
+    )
     args = parser.parse_args()
 
     model = args.model

@@ -1,17 +1,21 @@
 [tool.poetry]
 name = "diffbro"
-version = "0.1.5"
+version = "0.1.7"
 description = "Your personal AI assistant bro for better code reviews."
 authors = ["IndyDevDan <minor7addfloortom@gmail.com>"]
 readme = "README.md"
 packages = [{include = "py_diffbro"}]
+exclude = ["scripts/*"]
 
 [tool.poetry.dependencies]
-python = "^3.10"
+python = "^3.8"
 openai = "^0.27.8"
 python-dotenv = "^1.0.0"
 pydantic = "^2.1.1"
 
+
+[tool.poetry.group.dev.dependencies]
+tox = "^4.11.1"
 
 [build-system]
 requires = ["poetry-core"]
