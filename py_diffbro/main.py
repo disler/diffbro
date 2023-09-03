@@ -6,9 +6,7 @@ from py_diffbro.modules.constants import (
 from py_diffbro.modules.llm import prompt
 from py_diffbro.modules.git import get_git_diff
 from py_diffbro.modules.app_types import BroMode
-from py_diffbro.modules.bro import get_diffbro_prompt
-
-SUMMARY_BRO_PROMPT = "Summary of the git diff:"
+from py_diffbro.modules.bro import SUMMARY_BRO_PROMPT, get_diffbro_prompt
 
 
 def main():
@@ -83,24 +81,31 @@ def main():
         print(f"No git diff for diffbro")
         return
 
-    if summarize:
-        print(f"Summarizing git diff for diffbro on GPT model '{model}'")
-        summary_prompt_text = f"{SUMMARY_BRO_PROMPT}\n\n{git_diff}"
-        prompt_text = summary_prompt_text
-    elif not custom_prompt:
-        print(
-            f"Building prompt for diffbro in bromode: '{bro_mode}' mode on GPT model '{model}'"
-        )
+    print(
+        f"Building prompt for diffbro in bromode: '{bro_mode}' mode on GPT model '{model}'"
+        f"{f' with custom prompt: {custom_prompt}' if custom_prompt else ''}"
+        f"{f' Will generate diff summary.' if summarize else ''}"
+    )
+
+    if not custom_prompt:
         prompt_text = get_diffbro_prompt(bro_mode, git_diff)
     else:
-        print(f"Using custom prompt for diffbro on GPT model '{model}'")
         prompt_text = f"{custom_prompt}\n\n{git_diff}"
 
     print(f"Running DIFFBRO")
 
-    response = prompt(prompt_text, model)
+    diffbro_response = prompt(prompt_text, model)
 
-    print("DIFFBRO\n\n", response)
+    print("\n\nDIFFBRO\n\n", diffbro_response)
+
+    if summarize:
+        print(f"\n\nSummarizing git diff for diffbro on GPT model '{model}'")
+
+        summary_prompt_text = f"{SUMMARY_BRO_PROMPT}\n\n{git_diff}"
+
+        summary_diffbro_response = prompt(summary_prompt_text, model)
+
+        print("\n\nDIFFBRO SUMMARY\n\n", summary_diffbro_response)
 
 
 if __name__ == "__main__":
