@@ -55,6 +55,9 @@ def main():
     parser.add_argument(
         "-s", "--summarize", action="store_true", help="Summarize the git diff"
     )
+    parser.add_argument(
+        "-r", "--peer-review", type=str, default="", help="Specify the branch to compare the git diff against"
+    )
     args = parser.parse_args()
 
     model = args.model
@@ -63,6 +66,7 @@ def main():
     ignore = args.ignore
     custom_prompt = args.prompt
     summarize = args.summarize
+    peer_review = args.peer_review
 
     if args.mid:
         bro_mode = BroMode.MID
@@ -75,7 +79,7 @@ def main():
             if user_input.lower() in ["yes", "y"]:
                 model = "gpt-4"
 
-    git_diff = get_git_diff(only, ignore)
+    git_diff = get_git_diff(only, ignore, peer_review)
 
     if not git_diff:
         print(f"No git diff for diffbro")
