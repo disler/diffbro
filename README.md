@@ -109,7 +109,7 @@
 
 [✅] Chad should always ask to use gpt-4 (simple yes/no prompt)
 
-[] Add custom prompt flag to be run on the diff
+[✅] Add custom prompt flag to be run on the diff
   `diffbro --prompt "Below is a git diff of code. Please review and notify only of critical issues."`
 
 [] Add summarybro flag that will create a git commit message using the diffbro summary
