@@ -78,10 +78,12 @@ Examples:
         bro_mode = BroMode.MID
     elif args.chad:
         bro_mode = BroMode.CHAD
-        if model != 'gpt-4':
-            user_input = input("Chad mode is engaged. It is suggested to use 'gpt-4' model. Do you want to switch to 'gpt-4'? (yes/no): ")
-            if user_input.lower() == 'yes':
-                model = 'gpt-4'
+        if model != "gpt-4":
+            user_input = input(
+                "Chad mode is engaged. It is suggested to use 'gpt-4' model for optimal results. Do you want to switch to 'gpt-4'? (y/n): "
+            )
+            if user_input.lower() in ["yes", "y"]:
+                model = "gpt-4"
 
     git_diff = get_git_diff(only, ignore)
 

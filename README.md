@@ -7,7 +7,7 @@
 ## Features
 
 - Different bro modes for chill, to chad engineer level peer reviews
-  - chill: will review your code like a chill bro
+  - chill: will review your code like a chill bro (default)
     - `diffbro --chill`
   - mid: will review your code like a mid level engineer bro
     - `diffbro --mid`
@@ -81,12 +81,6 @@
 [✅] Add GPT model flag
 
 [✅] Add diff exclusion of large files like poetry.lock from the diff
-  Solution: `git diff -- '*.py' '*.js'`
-  API: 
-    Include specific file types
-      diffbro --only '*.py' '*.js'
-    Exclude specific file types
-      diffbro --ignore '*.py' '*.js'
 
   [✅] Add cli --only flag to diff only specific file types
 
@@ -98,27 +92,28 @@
 
 [✅] Deploy version 0.1.2 to pypy
 
--- off vid
-
 [✅] Add help docs
 
 [✅] Support additional python versions
 
 [✅] Improve openai_api_key check
 
-[] Add confirm prompts to improve DX 
-  - chad should always ask to use gpt-4 (simple yes/no prompt)
+[✅] Chad should always ask to use gpt-4 (simple yes/no prompt)
 
-[] Add token limit check to prevent overage charges
-
-[] Add 'AI Devlogs' section to readme w/links to ai devlogs
-
--- on vid
-
-[] Add ~/.diffbro config file support for defaults
-
-[] Add custom prompts with a --custom 'name' which will refer to a custom.* block in ~/.diffbro
+[] Add custom prompt flag to be run on the diff
+  `diffbro --prompt "Below is a git diff of code. Please review and notify only of critical issues."`
 
 [] Add summarybro flag that will create a git commit message using the diffbro summary
+  `diffbro --commit-msg` -> "Added new feature to the app, fixed a bug, and refactored some code."
 
-[] Deploy to Pypi
+[] RELEASE VERSION 1.0.0!!!
+
+- Next
+
+  [] Add token limit check to prevent overage charges
+
+  [] Add 'AI Devlogs' section to readme w/links to ai devlogs
+
+  [] Add ~/.diffbro config file support for defaults
+    - if a cli param was specified, use that. Add default values to detect if a cli param was specified (dirty)
+    - add new 'custom' param to cli to use custom config
