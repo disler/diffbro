@@ -112,7 +112,7 @@
 [✅] Add custom prompt flag to be run on the diff
   `diffbro --prompt "Below is a git diff of code. Please review and notify only of critical issues."`
 
-[] Add summarybro flag that will create a git commit message using the diffbro summary
+[✅] Add summarybro flag that will create a git commit message using the diffbro summary
   `diffbro --summarize` -> "Added new feature to the app, fixed a bug, and refactored some code."
 
 [] Add COMPLETE PR review flag which runs diffbro against a branch and creates a PR review
