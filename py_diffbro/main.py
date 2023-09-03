@@ -56,7 +56,11 @@ def main():
         "-s", "--summarize", action="store_true", help="Summarize the git diff"
     )
     parser.add_argument(
-        "-r", "--peer-review", type=str, default="", help="Specify the branch to compare the git diff against"
+        "-r",
+        "--peer-review",
+        type=str,
+        default="",
+        help="Specify the branch to compare the git diff against",
     )
     args = parser.parse_args()
 

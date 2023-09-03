@@ -13,6 +13,7 @@ def get_git_diff(only: List[str], ignore: List[str], branch: str = None):
     command = "git diff"
 
     if branch:
+        print(f"Diffing against branch {branch}")
         command += f" {branch}"
 
     if only or ignore:
