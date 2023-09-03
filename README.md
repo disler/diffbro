@@ -35,10 +35,12 @@
   - '*I want legit reviews all the time*'
     - Throw this line into your .bashrc or .bash_profile
       - `alias dbro='diffbro --chad --model gpt-4'`
+    - Whenever you want a review, just run
+      - `dbro`
 
 ## Setup
 
-- Install or switch to [Python 3.7.1+](https://www.python.org/downloads/)
+- Install or switch to [Python 3.11 or 3.10 or 3.9 or 3.8](https://www.python.org/downloads/)
   - Check your python version
     - `python --version`
 
@@ -46,6 +48,10 @@
   - `pip install --upgrade diffbro`
 
 - Export your openai api key
+  - Copy .env.sample -> .env file in your project root
+    - `cp .env.sample .env`
+  - Update .env to contain your openai api key
+  - OR
   - `export OPENAI_API_KEY=<your-openai-api-key>`
 
 - Make changes to your codebase
@@ -57,13 +63,16 @@
 
 - Commit your code with confidence
 
+- View all commands, options and examples
+  - `diffbro --help`
+
 #### Install bleeding edge version test version
 
 - Install BLEEDING EDGE version from [TestPyPi](https://test.pypi.org/)
   - `pip install --upgrade --index-url https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple diffbro`
 
 
-#### Local Dev (excluded from dist)
+#### Local Dev Commands (excluded from dist)
 - run diffbro locally
   - `poetry run diffbro`
 - test versions
@@ -100,11 +109,13 @@
 
 [✅] Chad should always ask to use gpt-4 (simple yes/no prompt)
 
+[] Publish git repo
+
 [] Add custom prompt flag to be run on the diff
   `diffbro --prompt "Below is a git diff of code. Please review and notify only of critical issues."`
 
 [] Add summarybro flag that will create a git commit message using the diffbro summary
-  `diffbro --commit-msg` -> "Added new feature to the app, fixed a bug, and refactored some code."
+  `diffbro --summarize` -> "Added new feature to the app, fixed a bug, and refactored some code."
 
 [] RELEASE VERSION 1.0.0!!!
 
