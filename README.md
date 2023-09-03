@@ -115,7 +115,7 @@
 [✅] Add summarybro flag that will create a git commit message using the diffbro summary
   `diffbro --summarize` -> "Added new feature to the app, fixed a bug, and refactored some code."
 
-[] Add COMPLETE PR review flag which runs diffbro against a branch and creates a PR review
+[✅] Add COMPLETE PR review flag which runs diffbro against a branch and creates a PR review
   `diffbro --pr main`
 
 [] RELEASE VERSION 1.0.0!!!
