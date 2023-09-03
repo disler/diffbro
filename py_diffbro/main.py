@@ -50,7 +50,7 @@ def main():
         "--ignore", nargs="*", default=[], help="Ignore files with these extensions"
     )
     parser.add_argument(
-        "--prompt", type=str, default=None, help="Specify a custom prompt"
+        "-p", "--prompt", type=str, default="", help="Specify a custom prompt"
     )
     args = parser.parse_args()
 
@@ -58,7 +58,7 @@ def main():
     bro_mode: BroMode = BroMode.CHILL
     only = args.only
     ignore = args.ignore
-    prompt = args.prompt
+    custom_prompt = args.prompt
 
     if args.mid:
         bro_mode = BroMode.MID
@@ -77,11 +77,14 @@ def main():
         print(f"No git diff for diffbro")
         return
 
-    print(
-        f"Building prompt for diffbro in bromode: '{bro_mode}' mode on GPT model '{model}'"
-    )
-
-    prompt_text = get_diffbro_prompt(bro_mode, git_diff, prompt)
+    if not custom_prompt:
+        print(
+            f"Building prompt for diffbro in bromode: '{bro_mode}' mode on GPT model '{model}'"
+        )
+        prompt_text = get_diffbro_prompt(bro_mode, git_diff)
+    else:
+        print(f"Using custom prompt for diffbro on GPT model '{model}'")
+        prompt_text = f"{custom_prompt}\n\n{git_diff}"
 
     print(f"Running DIFFBRO")
 
