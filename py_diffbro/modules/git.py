@@ -12,12 +12,12 @@ def get_git_diff(only: List[str], ignore: List[str], branch: str = None):
     if ignore:
         print(f"Diffing ALL files except those with extensions {ignore}")
         files = " ".join(f":(exclude)'**/*{ext}'" for ext in ignore)
-        command = f"git diff {branch + ' -- ' if branch else ''}. {files}"
+        command = f"git diff {branch + ' ' if branch else ''}-- . {files}"
     elif only:
         print(f"Diffing exclusively files with extensions {only}")
         files = " ".join(f"'**/*{ext}'" for ext in only)
-        command = f"git diff {branch + ' -- ' if branch else ''}{files}"
+        command = f"git diff {branch + ' ' if branch else ''}-- {files}"
     else:
         print(f"Diffing all files (no extensions specified))")
-        command = f"git diff {branch if branch else ''}"
+        command = f"git diff {branch + ' ' if branch else ''}--"
     return run_shell_command(command)
