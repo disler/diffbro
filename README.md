@@ -1,4 +1,4 @@
-# diffbro
+# diffbro - AI charged Peer Reviews
 
 *Your AI Peer Review Bro*
 
@@ -109,19 +109,20 @@
 
 [✅] Chad should always ask to use gpt-4 (simple yes/no prompt)
 
-[] Publish git repo
-
 [] Add custom prompt flag to be run on the diff
   `diffbro --prompt "Below is a git diff of code. Please review and notify only of critical issues."`
 
 [] Add summarybro flag that will create a git commit message using the diffbro summary
   `diffbro --summarize` -> "Added new feature to the app, fixed a bug, and refactored some code."
 
+[] Add COMPLETE PR review flag which runs diffbro against a branch and creates a PR review
+  `diffbro --pr main`
+
 [] RELEASE VERSION 1.0.0!!!
 
 - Next
 
-  [] Add 'author notes' to diffbro readme on use case.
+  
 
   [] Add token limit check to prevent overage charges
 
