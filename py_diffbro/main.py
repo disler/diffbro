@@ -8,6 +8,8 @@ from py_diffbro.modules.git import get_git_diff
 from py_diffbro.modules.app_types import BroMode
 from py_diffbro.modules.bro import get_diffbro_prompt
 
+SUMMARY_BRO_PROMPT = "Summary of the git diff:"
+
 
 def main():
     parser = argparse.ArgumentParser(
@@ -52,6 +54,9 @@ def main():
     parser.add_argument(
         "-p", "--prompt", type=str, default="", help="Specify a custom prompt"
     )
+    parser.add_argument(
+        "-s", "--summarize", action="store_true", help="Summarize the git diff"
+    )
     args = parser.parse_args()
 
     model = args.model
@@ -59,6 +64,7 @@ def main():
     only = args.only
     ignore = args.ignore
     custom_prompt = args.prompt
+    summarize = args.summarize
 
     if args.mid:
         bro_mode = BroMode.MID
@@ -77,7 +83,11 @@ def main():
         print(f"No git diff for diffbro")
         return
 
-    if not custom_prompt:
+    if summarize:
+        print(f"Summarizing git diff for diffbro on GPT model '{model}'")
+        summary_prompt_text = f"{SUMMARY_BRO_PROMPT}\n\n{git_diff}"
+        prompt_text = summary_prompt_text
+    elif not custom_prompt:
         print(
             f"Building prompt for diffbro in bromode: '{bro_mode}' mode on GPT model '{model}'"
         )
