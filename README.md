@@ -38,7 +38,7 @@
     - Whenever you want a review, just run
       - `dbro`
 
-## Setup
+## Setup & Usage
 
 - Install or switch to [Python 3.11 or 3.10 or 3.9 or 3.8](https://www.python.org/downloads/)
   - Check your python version
@@ -120,6 +120,8 @@
 [] RELEASE VERSION 1.0.0!!!
 
 - Next
+
+  [] Add 'author notes' to diffbro readme on use case.
 
   [] Add token limit check to prevent overage charges
 
