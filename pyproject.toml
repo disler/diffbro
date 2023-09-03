@@ -6,6 +6,8 @@ authors = ["IndyDevDan <minor7addfloortom@gmail.com>"]
 readme = "README.md"
 packages = [{include = "py_diffbro"}]
 exclude = ["scripts/*"]
+license = "MIT"
+repository = "https://github.com/disler/diffbro.git"
 
 [tool.poetry.dependencies]
 python = "^3.8"
