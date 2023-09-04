@@ -77,6 +77,9 @@ Diffbro is best used before you stage and commit your code to your codebase. Dif
 
 - Make changes to your codebase
 
+- Run diffbro
+  - `diffbro`
+
 ### Compare local changes
 
 - Before you stage and commit, run diffbro
