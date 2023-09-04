@@ -1,4 +1,4 @@
-# diffbro - AI charged Peer Reviews
+# diffbro - AI Powered Peer Reviews
 
 *Your AI Peer Review Bro*
 
