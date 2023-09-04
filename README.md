@@ -2,7 +2,9 @@
 
 *Your AI Peer Review Bro*
 
-Diffbro is a command line tool that gives you AI powered peer reviews on your codebase. Under the hood diffbro utilizes `git diff` and OpenAI's *GPT-3.5-turbo* and *GPT-4* to review your code and provide feedback on your changes. Diffbro is best used before you stage and commit your code to your codebase. Diffbro also supports full branch diff PR feedback as if it were an engineer reviewing your merge request (see `--peer-review` flag). Diffbro is designed to help you catch bugs, improve your code quality, and help you ship with confidence.
+Diffbro is a command line tool that gives you AI powered peer reviews on your codebase. Under the hood diffbro utilizes `git diff` and OpenAI's *GPT-3.5-turbo* and *GPT-4* to review your code and provide feedback on your changes. 
+
+Diffbro is best used before you stage and commit your code to your codebase. Diffbro also supports full branch diff PR feedback as if it were an engineer reviewing your merge request (see `--peer-review` flag). Diffbro is designed to help you catch bugs, improve your code quality, and help you ship with confidence.
 
 ![Diffbro Header](https://firebasestorage.googleapis.com/v0/b/solopreneur-d8361.appspot.com/o/Diffbro%2Fdiffbro.jpg?alt=media&token=fefc8d90-10e2-4091-9b03-957af25aee3b)
 
@@ -40,7 +42,7 @@ Diffbro is a command line tool that gives you AI powered peer reviews on your co
   - `diffbro --summarize`
 
 - Override the default prompts with your own custom prompt
-  - `diffbro --prompt "Below is a git diff of code. Please review and notify only of critical issues."`
+  - `diffbro --prompt "Below is a git diff of code. Please review and notify only of critical issues. If there are no critical issues, respond with tons of checkbox emojis"`
 
 - Example command combos
   - '*I want a chill review on my .py and .js files*'
@@ -57,11 +59,11 @@ Diffbro is a command line tool that gives you AI powered peer reviews on your co
     - `diffbro --mid --only .ts`
   - '*I want top tier code reviews all the time*'
     - Throw this line into your `.bashrc` or `.bash_profile`
-      - `alias dbro='diffbro --chad --model gpt-4' --summarize`
+      - `alias dbro="diffbro --chad --model gpt-4 --summarize"`
     - Then, whenever you want a review, just run
       - `dbro`
 
-## Setup & Usage
+## Install & Use
 
 - Install or switch to [Python 3.11 or 3.10 or 3.9 or 3.8](https://www.python.org/downloads/)
   - Check your python version
