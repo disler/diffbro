@@ -32,7 +32,7 @@ Diffbro is best used before you stage and commit your code to your codebase. Dif
     - `diffbro --only .py .js`
   - Everything except .py and .js files
     - `diffbro --ignore .py .js`
-  - *Defaults to [".py", ".c", ".cpp", ".java", ".cs", ".php", ".vb", ".html", ".css", ".js", ".asp", ".aspx", ".cfm", ".cgi", ".pl", ".cer", ".htm", ".xhtml", ".shtml", ".jsp", ".jsx", ".tsx", ".vue", ".solid", ".toml", ".md", ".go", ".rs", ".swift"]*
+  - *Defaults to [".py", ".c", ".cpp", ".java", ".cs", ".php", ".vb", ".html", ".css", ".js", ".ts", ".asp", ".aspx", ".cfm", ".cgi", ".pl", ".cer", ".htm", ".xhtml", ".shtml", ".jsp", ".jsx", ".tsx", ".vue", ".solid", ".toml", ".md", ".go", ".rs", ".swift"]*
 
 - Choose your gpt model
   - `diffbro --model gpt-3.5-turbo`
