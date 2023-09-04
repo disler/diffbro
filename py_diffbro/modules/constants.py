@@ -9,6 +9,7 @@ PROGRAMMING_FILE_EXTENSIONS = [
     ".html",
     ".css",
     ".js",
+    ".ts",
     ".asp",
     ".aspx",
     ".cfm",
